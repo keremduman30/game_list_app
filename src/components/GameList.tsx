@@ -3,6 +3,7 @@ import { getGameList } from "../store/slices/api_slice";
 import { RootState, useAppDispatch } from "../store/store";
 import { useEffect } from "react";
 import { Banner } from "./Banner";
+import TrendingGames from "./TrendingGames";
 
 const GameList = () => {
   const { gamesData, loading } = useSelector((store: RootState) => store.api);
@@ -17,6 +18,7 @@ const GameList = () => {
       {loading == "success" && (
         <div>
           <Banner firstItem={gamesData[0]} />
+          <TrendingGames gameList={gamesData} />
         </div>
       )}
     </div>
