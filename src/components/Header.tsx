@@ -5,6 +5,7 @@ type HeaderProps = {
   toggle: boolean;
   setToggle(toggle: boolean): void;
 };
+//https://api.rawg.io/api/games?key=18d8dc115d954615a6fe8522598e8a97
 
 const Header = ({ toggle, setToggle }: HeaderProps) => {
   return (
@@ -15,19 +16,25 @@ const Header = ({ toggle, setToggle }: HeaderProps) => {
         <input
           type="text"
           placeholder="Search Games"
-          className="w-full outline-none bg-transparent px-2 dark:bg-cyan-500 "
+          className="w-full outline-none bg-transparent px-2 dark:bg-cyan-500  dark:bg-transparent"
         />
       </div>
       <div>
         {toggle ? (
           <HiMoon
-            onClick={() => setToggle(!toggle)}
-            className="text-[60px] bg-slate-200 text-black p-2 rounded-full cursor-pointer"
+            onClick={() => {
+              setToggle(!toggle);
+              localStorage.setItem("theme", "l");
+            }}
+            className="text-[45px] bg-slate-200 text-black p-2 rounded-full cursor-pointer"
           />
         ) : (
           <HiSun
-            onClick={() => setToggle(!toggle)}
-            className="text-[60px] bg-slate-200 text-black p-2 rounded-full cursor-pointer"
+            onClick={() => {
+              setToggle(!toggle);
+              localStorage.setItem("theme", "d");
+            }}
+            className="text-[45px] bg-slate-200 text-black p-2 rounded-full cursor-pointer"
           />
         )}
       </div>
