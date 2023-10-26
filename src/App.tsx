@@ -9,7 +9,9 @@ function App() {
   }, []);
 
   return (
-    <div className={`${theme && "dark"} ${theme && "bg-[#121212]"} min-h-screen`}>
+    <div
+      className={`${theme && "dark"} ${theme && "bg-[#121212]"} min-h-screen`}
+    >
       <Header toggle={theme} setToggle={setTheme} />
       <Routes>
         <Route path="/" element={<Home />} />
