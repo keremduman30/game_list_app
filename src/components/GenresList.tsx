@@ -12,11 +12,12 @@ const GenresList = () => {
       dispatch(getGenreList("/genres"));
     }
   }, [dispatch, loading]);
+
   return (
     <div className="">
       <h1 className="text-3xl font-bold dark:text-white mb-3 ">Genres</h1>
-      {genresData.map((item) => (
-        <GenresListItem key={item.id} item={item} />
+      {genresData.map((item,index) => (
+        <GenresListItem key={item.id} item={item} index={index} />
       ))}
     </div>
   );
